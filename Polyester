@@ -1,6 +1,48 @@
-x = input("Please choose your Product: ")
-if x == "Polyester":
-    print("SP40")
-elif x == "Cabon":
-    print("TX20")
-f
+def mergeSort(arr): 
+    if len(arr) >1: 
+        mid = len(arr)//2  #Die mitte des Arrays finden
+        L = arr[:mid]   #Die Array Elemente teilen
+        R = arr[mid:] #in zwei Hälften
+  
+        mergeSort(L)  #Die erste Hälfte sortieren
+        mergeSort(R)  #Die zweite Hälfte sortieren
+  
+        i = j = k = 0
+
+        #Die Daten in die Temporären Arrays L[] und R[] kopieren
+        while i < len(L) and j < len(R): 
+            if L[i] < R[j]: 
+                arr[k] = L[i] 
+                i+=1
+          c  else: 
+                arr[k] = R[j] 
+                j+=1
+            k+=1
+          
+
+        #Kontrollieren ob ein Element übrig ist
+        while i < len(L): 
+            arr[k] = L[i] 
+            i+=1
+            k+=1
+          
+        while j < len(R): 
+            arr[k] = R[j] 
+            j+=1
+            k+=1
+
+#Code um die Liste anzuzeigen
+def printList(arr): 
+    for i in range(len(arr)):         
+        print(arr[i],end=" ") 
+    print() 
+
+
+#Treiber Code um den Code oben zu testen
+if __name__ == '__main__': 
+    arr = [25, 11, 63, 5, 82, 76,55,100,1,773,7,62,80,800,3]  
+    print ("Given array is", end="\n")  
+    printList(arr) 
+    mergeSort(arr) 
+    print("Sorted array is: ", end="\n") 
+    printList(arr) 
