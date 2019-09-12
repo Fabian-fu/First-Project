@@ -1,0 +1,6 @@
+x = input("Please choose your Product: ")
+if x == "Polyester":
+    print("SP40")
+elif x == "Cabon":
+    print("TX20")
+
