@@ -3,4 +3,4 @@ if x == "Polyester":
     print("SP40")
 elif x == "Cabon":
     print("TX20")
-
+f
